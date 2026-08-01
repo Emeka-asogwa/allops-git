@@ -39,5 +39,11 @@ jobs:
   Deploy-check:
     needs: Deploy
     runs-on: ubuntu-latest
+    steps:
+      - name: Deploy check1
+        run: echo "Deploy checking..."
   Deploy-check2:
     runs-on: ubuntu-latest
+    steps:
+      - name: Deploy-check2
+        run: echo "Deploy Deploy-check2"
