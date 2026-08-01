@@ -12,6 +12,8 @@ permissions:
   actions: write
 env:
   APP_NAME: "AllOPS"
+  AWS_ACCESS_KEY_NAME: ${{ secrets.AWS_ACCESS_KEY_ID}}
+  AWS_ACCESS_SECRET_NAME: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
 
 jobs:
   Build:
@@ -43,7 +45,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy check1
-        run: echo $APP_NAME
+        # run: echo "Printing app name $APP_NAME"
+        run: echo "$AWS_ACCESS_KEY_NAME and $AWS_ACCESS_SECRET_NAME"
   Deploy-check2:
     runs-on: ubuntu-latest
     steps:
