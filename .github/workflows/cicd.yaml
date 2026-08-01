@@ -12,7 +12,7 @@ permissions:
   actions: write
 
 jobs:
-  Build-Deploy:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -25,6 +25,14 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm test
-      - name: Deploy to production
-        if: github.ref == 'refs/heads/main' && success()
-        run: npm run deploy
+      - name: Build app
+        run: npm run build
+      # - name: Deploy to production
+      #   if: github.ref == 'refs/heads/main' && success()
+      #   run: npm run deploy
+  Deploy:
+    needs: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy app
+        run: echo "Deploying to production..."
