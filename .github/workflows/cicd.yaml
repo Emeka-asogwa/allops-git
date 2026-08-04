@@ -14,7 +14,7 @@ env:
   APP_NAME: "AllOPS"
   AWS_ACCESS_KEY_NAME: ${{ secrets.AWS_ACCESS_KEY_ID}}
   AWS_ACCESS_SECRET_NAME: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-  TEST_ID: ${{ vars.Test_ID}}
+  TEST_ID: ${{ vars.TEST_ID}}
 
 jobs:
   Build:
