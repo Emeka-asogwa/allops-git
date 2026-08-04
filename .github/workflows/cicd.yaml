@@ -45,6 +45,7 @@ jobs:
   Deploy-check:
     needs: Deploy
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: Deploy check1
         # run: echo "Printing app name $APP_NAME"
